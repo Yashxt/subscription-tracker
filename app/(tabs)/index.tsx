@@ -8,18 +8,13 @@ export default function App() {
     console.log("HOME SCREEN RENDERED");
     return (
         <SafeAreaView className="flex-1 bg-background p-5">
-            <Text className="text-xl font-bold text-blue-500 ">
-                Welcome to Nativewind!
+            <Text className="text-5xl font-sans-extrabold text-blue-500 ">
+                Home
             </Text>
-            <Link href="/onboarding" className="mt-4 rounded bg-primary text-white p-4"> Go to ON boarding</Link>
-            <Link href="/(auth)/sign-in" className="mt-4 rounded bg-primary text-white p-4"> login</Link>
-            <Link href="/(auth)/sign-up" className="mt-4 rounded bg-primary text-white p-4"> create</Link>
-             <Link href="/subscription/spotify">spotify subsciption</Link>
-            <Link
-                href={{
-                  pathname:"/subscription/[id]",
-                   params : {id: "claude"}
-            }}>claude max subsciption </Link>
+
+            <Link href="/onboarding" className="mt-4 font-sans-bold rounded bg-primary text-white p-4"> Go to ON boarding</Link>
+            <Link href="/(auth)/sign-in" className="mt-4 rounded font-sans-bold bg-primary text-white p-4"> Go to sign in </Link>
+            <Link href="/(auth)/sign-up" className="mt-4 rounded font-sans-bold bg-primary text-white p-4">Go to sign up </Link>`
         </SafeAreaView>
     );
 }
