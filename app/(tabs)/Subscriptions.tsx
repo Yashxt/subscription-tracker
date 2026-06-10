@@ -1,11 +1,13 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-
+import {  Text } from 'react-native';
+import {styled} from "nativewind"
+import {SafeAreaView as RnSafeAreaContext} from "react-native-safe-area-context"
+ const SafeAreaView = styled(RnSafeAreaContext)
 const Subscription = () => {
   return (
-    <View>
+    <SafeAreaView>
       <Text>Subscription</Text>
-    </View>
+    </SafeAreaView>
   );
 };
 
