@@ -1,6 +1,7 @@
 import {SplashScreen, Stack} from "expo-router";
 import {useFonts} from "expo-font"
 import {useEffect} from "react"
+SplashScreen.preventAutoHideAsync()   // use this so that it can hide splash screen before even fonts load which causes a flash effect
 export default function RootLayout() {
     const [fontsLoaded] = useFonts({
         'sans-regular': require('../assets/fonts/PlusJakartaSans-Regular.ttf'),
