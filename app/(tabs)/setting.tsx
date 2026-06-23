@@ -6,7 +6,7 @@ import {SafeAreaView as RnSafeAreaView} from "react-native-safe-area-context";
 const setting = () => {
   return (
     <SafeAreaView>
-      <Text>setting</Text>
+      <Text>setting hogyi bhayankaer</Text>
     </SafeAreaView>
   );
 };
