@@ -3,7 +3,7 @@ import {useFonts} from "expo-font"
 import {useEffect} from "react"
 import { ClerkProvider, useAuth } from '@clerk/expo';
 import { tokenCache } from '@clerk/expo/token-cache';
-import { posthog } from '../src/config/posthog';
+import { posthog } from '@/src/config/posthog';
 import { PostHogProvider } from 'posthog-react-native';
 SplashScreen.preventAutoHideAsync()   // use this so that it can hide splash screen before even fonts load which causes a flash effect
 

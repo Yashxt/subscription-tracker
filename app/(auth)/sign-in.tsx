@@ -4,7 +4,7 @@ import { useSignIn } from '@clerk/expo';
 import { useState } from 'react';
 import { SafeAreaView as RNSafeAreaView } from 'react-native-safe-area-context';
 import { styled } from 'nativewind';
-import { usePostHog } from 'posthog-react-native';
+ import { usePostHog } from 'posthog-react-native';
 
 const SafeAreaView = styled(RNSafeAreaView);
 

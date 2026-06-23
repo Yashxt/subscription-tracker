@@ -28,27 +28,32 @@ const SignUp = () => {
     const formValid = emailAddress.length > 0 && password.length >= 8 && emailValid;
 
     const handleSubmit = async () => {
-        if (!formValid) return;
+        if (!formValid) {
+            console.log('FORM INVALID - returning early');
+            return;
+        }
 
+        console.log('Calling signUp.password...');
         const { error } = await signUp.password({
             emailAddress,
             password,
         });
 
+        console.log('Result error:', JSON.stringify(error));
+        console.log('signUp.status after password():', signUp.status);
+        console.log('signUp.unverifiedFields:', signUp.unverifiedFields);
+        console.log('signUp.missingFields:', signUp.missingFields);
+
         if (error) {
             console.error(JSON.stringify(error, null, 2));
-            posthog.capture('user_sign_up_failed', {
-                error_message: error.message,
-            });
+            posthog.capture('user_sign_up_failed', { error_message: error.message });
             return;
         }
 
-        // Send verification email
-        if (!error) {
-            await signUp.verifications.sendEmailCode();
-        }
+        console.log('Calling sendEmailCode...');
+        await signUp.verifications.sendEmailCode();
+        console.log('signUp.status after sendEmailCode:', signUp.status);
     };
-
     const handleVerify = async () => {
         await signUp.verifications.verifyEmailCode({
             code,
